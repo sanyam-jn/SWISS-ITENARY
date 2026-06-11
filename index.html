@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Switzerland · Papa turns 50 · 28 Jul – 4 Aug 2026</title>
+<meta name="description" content="A build-your-own Switzerland itinerary for Mum and Papa's trip — pick activities, hotels and flights, and watch the budget live.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --snow:#FAFAF8; --ink:#1A1B1E; --ink2:#5A5C63; --line:#E4E3DD;
+  --red:#DA291C; --red-dark:#9E1B12; --glacier:#DCE9F2; --glacier-deep:#27506B;
+  --pine:#2F5D50; --pine-bg:#E4EFE9; --gold:#B98A1C; --gold-bg:#F7EFDC;
+  --r:14px; --maxw:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--snow);color:var(--ink);font-size:16px;line-height:1.65;padding-bottom:120px}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+h1,h2,h3,.disp{font-family:'Archivo',sans-serif;line-height:1.05;letter-spacing:-0.01em}
+section{padding:64px 0;border-top:1px solid var(--line)}
+.eyebrow{font-family:'Archivo',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--red)}
+.sec-h{font-size:clamp(28px,5vw,44px);font-weight:900;margin:8px 0 10px}
+.sec-sub{color:var(--ink2);max-width:640px;margin-bottom:32px}
+.chip{display:inline-block;font-size:12px;font-weight:600;padding:3px 10px;border-radius:99px;border:1px solid var(--line);background:#fff}
+.chip.free{background:var(--pine-bg);color:var(--pine);border-color:transparent}
+.chip.must{background:var(--red);color:#fff;border-color:transparent}
+.chip.gold{background:var(--gold-bg);color:var(--gold);border-color:transparent}
+.btn{font-family:'Inter',sans-serif;font-weight:600;font-size:14px;border:1.5px solid var(--ink);background:#fff;color:var(--ink);border-radius:99px;padding:9px 18px;cursor:pointer;transition:all .15s}
+.btn:hover{background:var(--ink);color:#fff}
+.btn.on{background:var(--red);border-color:var(--red);color:#fff}
+.btn.sm{padding:6px 14px;font-size:13px}
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(250,250,248,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:18px;height:56px;overflow-x:auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.logo{font-family:'Archivo',sans-serif;font-weight:900;font-size:15px;white-space:nowrap}
+.logo b{color:var(--red)}
+nav a{font-size:13.5px;font-weight:500;color:var(--ink2);text-decoration:none;white-space:nowrap}
+nav a:hover{color:var(--ink)}
+/* ---------- hero ---------- */
+header{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,30,.15) 30%,rgba(10,20,30,.72))}
+.hero-in{position:relative;width:100%;padding:0 20px 56px;max-width:var(--maxw);margin:0 auto}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;background:var(--red);padding:6px 14px;border-radius:4px;margin-bottom:18px}
+h1{font-size:clamp(44px,9vw,104px);font-weight:900;text-transform:uppercase;line-height:.92}
+.hero-board{margin-top:26px;display:flex;flex-wrap:wrap;gap:0;border:1px solid rgba(255,255,255,.35);border-radius:10px;overflow:hidden;backdrop-filter:blur(4px);max-width:720px}
+.hero-board div{flex:1 1 160px;padding:12px 18px;border-right:1px solid rgba(255,255,255,.25)}
+.hero-board div:last-child{border-right:0}
+.hero-board small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.hero-board span{font-family:'Archivo',sans-serif;font-weight:700;font-size:17px}
+/* ---------- rail route ---------- */
+.rail{position:relative;margin-top:12px}
+.rail:before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:3px;background:var(--red);border-radius:2px}
+.stop{position:relative;padding:0 0 36px 44px}
+.stop:last-child{padding-bottom:0}
+.dot{position:absolute;left:0;top:4px;width:25px;height:25px;border-radius:50%;background:#fff;border:3px solid var(--red);display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:900;font-size:11px;color:var(--red)}
+.stop.bday .dot{background:var(--red);color:#fff}
+.stop h3{font-size:19px;font-weight:700}
+.stop .when{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.stop p{color:var(--ink2);font-size:15px;max-width:620px;margin-top:4px}
+.stop.bday{background:#FDF1F0;border:1px solid #F3CDC9;border-radius:var(--r);padding:18px 18px 18px 52px;margin-left:-8px}
+.stop.bday .dot{left:8px;top:18px}
+/* ---------- generic cards ---------- */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.card .ph,.card img.photo{height:185px;width:100%;object-fit:cover;background:var(--glacier)}
+.card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:18px;font-weight:700}
+.card .meta{display:flex;flex-wrap:wrap;gap:6px}
+.card p{font-size:14px;color:var(--ink2)}
+.price-row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:10px;gap:8px}
+.price{font-family:'Archivo',sans-serif;font-weight:700;font-size:17px}
+.price small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:11.5px;color:var(--ink2)}
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.fbtn{font-size:13px;font-weight:600;padding:7px 14px;border-radius:99px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.fbtn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* ---------- option cards (flights/hotels/food/pass) ---------- */
+.opts{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.opt{background:#fff;border:1.5px solid var(--line);border-radius:var(--r);padding:18px;cursor:pointer;position:relative}
+.opt.on{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+.opt .tag{position:absolute;top:-10px;left:14px;background:var(--red);color:#fff;font-size:11px;font-weight:700;padding:2px 10px;border-radius:99px}
+.opt h4{font-family:'Archivo',sans-serif;font-size:16px;font-weight:700}
+.opt p{font-size:13.5px;color:var(--ink2);margin:4px 0 10px}
+.opt .p{font-family:'Archivo',sans-serif;font-weight:900;font-size:19px}
+/* ---------- tables ---------- */
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.tbl th{font-family:'Archivo',sans-serif;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:12px 14px;background:var(--glacier);color:var(--glacier-deep)}
+.tbl td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top}
+.tbl-wrap{overflow-x:auto;border-radius:var(--r)}
+/* ---------- info strips ---------- */
+.strip{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.strip .s{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.strip h4{font-family:'Archivo',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px}
+.strip p,.strip li{font-size:14px;color:var(--ink2)}
+.strip ul{padding-left:18px}
+/* ---------- budget bar ---------- */
+#bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--ink);color:#fff;box-shadow:0 -6px 24px rgba(0,0,0,.18)}
+.bar-in{max-width:var(--maxw);margin:0 auto;padding:10px 20px 14px}
+.bar-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.bar-total{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(18px,4vw,24px)}
+.bar-total small{font-family:'Inter',sans-serif;font-weight:500;font-size:12px;opacity:.7;display:block}
+.bar-stat{font-size:13px;font-weight:600}
+.bar-stat.ok{color:#7FD8A4}.bar-stat.over{color:#FF9B92}
+.track{position:relative;height:6px;background:rgba(255,255,255,.18);border-radius:4px;margin-top:10px}
+.track .fill{position:absolute;left:0;top:0;bottom:0;background:var(--red);border-radius:4px;transition:width .35s}
+.track .train{position:absolute;top:-9px;transform:translateX(-50%);transition:left .35s;font-size:0}
+.track .train svg{width:24px;height:24px}
+#openDrawer{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:99px;font-size:13px;font-weight:600;padding:7px 16px;cursor:pointer;white-space:nowrap}
+/* drawer */
+#drawer{position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;border-radius:20px 20px 0 0;max-height:78vh;overflow-y:auto;transform:translateY(105%);transition:transform .3s;box-shadow:0 -10px 40px rgba(0,0,0,.25)}
+#drawer.open{transform:translateY(0)}
+.dr-in{max-width:680px;margin:0 auto;padding:22px 20px 32px}
+.dr-row{display:flex;justify-content:space-between;gap:12px;font-size:14.5px;padding:9px 0;border-bottom:1px dashed var(--line)}
+.dr-row b{font-weight:600}
+.dr-tot{display:flex;justify-content:space-between;font-family:'Archivo',sans-serif;font-weight:900;font-size:20px;padding:14px 0 4px}
+.dr-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.btn.wa{background:#1FAF54;border-color:#1FAF54;color:#fff}
+footer{padding:48px 20px 60px;text-align:center;color:var(--ink2);font-size:13.5px;border-top:1px solid var(--line)}
+@media(max-width:600px){section{padding:48px 0}.stop.bday{margin-left:0}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav-in">
+  <div class="logo">CH<b>·</b>50</div>
+  <a href="#route">Route</a><a href="#places">Places</a><a href="#activities">Activities</a>
+  <a href="#passes">Rail passes</a><a href="#trains">Trains</a><a href="#hotels">Hotels</a>
+  <a href="#weather">Weather</a><a href="#essentials">Essentials</a>
+</div></nav>
+
+<header>
+  <img class="hero-img" alt="The Jungfraujoch high-alpine terrace above the Aletsch glacier" src="https://lh3.googleusercontent.com/place-photos/AJRVUZMpUT5OoMXsNRFvRBXOxtyDj0H72DgIg11ufHfDAPNntNHR3UC3gQ2Qq59o_FhhzXjvoMvqs8YlQzz_4bzUEPHXDd7SczSQpVc-gTRt49hXzRBPevTD-IPmqVdNMSCqEUzieqMlJD4-aQ70BVozA6kh=s4800-w800-h600"
+    onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(180deg,#27506B,#0F2433)'">
+  <div class="hero-shade"></div>
+  <div class="hero-in">
+    <span class="hero-kicker">Papa turns 50 · 2 August 2026</span>
+    <h1>Switzer-<br>land,<br>your way</h1>
+    <div class="hero-board">
+      <div><small>Depart Delhi</small><span>27 July, night</span></div>
+      <div><small>Return</small><span>4 August</span></div>
+      <div><small>Travellers</small><span>Mum + Papa</span></div>
+      <div><small>Budget</small><span>₹6,00,000</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="route"><div class="wrap">
+  <span class="eyebrow">The plan</span>
+  <h2 class="sec-h">Seven days, one red line</h2>
+  <p class="sec-sub">A relaxed clockwise loop — never more than one big excursion a day, and the trains do the sightseeing while you sit with coffee. Every leg below is covered by the rail pass.</p>
+  <div class="rail">
+    <div class="stop"><div class="dot">1</div><div class="when">Tue 28 Jul · Zurich</div><h3>Land, chocolate, stroll</h3><p>Morning arrival. Easy first day: the Lindt Home of Chocolate on the lake (book a 2:30 pm slot), then a gentle wander through the old town lanes and along the water. Early dinner, proper sleep.</p></div>
+    <div class="stop"><div class="dot">2</div><div class="when">Wed 29 Jul · Lucerne</div><h3>The postcard city</h3><p>One hour by train. Chapel Bridge in the morning light, the painted old town at your own pace, and an afternoon panoramic cruise on Lake Lucerne — free with the pass. Two nights here, one hotel.</p></div>
+    <div class="stop"><div class="dot">3</div><div class="when">Thu 30 Jul · Mt Titlis</div><h3>Snow in summer</h3><p>45 minutes to Engelberg, then the famous rotating Rotair cable car to 3,020 m — glacier cave, suspension bridge, snow underfoot in August. Back in Lucerne for dinner.</p></div>
+    <div class="stop"><div class="dot">4</div><div class="when">Fri 31 Jul · Interlaken</div><h3>The beautiful train day</h3><p>The Luzern–Interlaken Express: two hours past five alpine lakes (sit on the right). Check in, rest, then the evening funicular up Harder Kulm for golden-hour views of Eiger, Mönch and Jungfrau over dinner.</p></div>
+    <div class="stop"><div class="dot">5</div><div class="when">Sat 1 Aug · Jungfraujoch</div><h3>Top of Europe</h3><p>Eiger Express gondola up, cogwheel train to 3,454 m — Ice Palace, Sphinx terrace, the Aletsch glacier. It's also Swiss National Day: fireworks over the lakes back in Interlaken tonight.</p></div>
+    <div class="stop bday"><div class="dot">★</div><div class="when">Sun 2 Aug · Interlaken</div><h3>Papa's 50th — the slow, grand day</h3><p>No alarms. Long breakfast and a couples spa morning at the Victoria-Jungfrau, then choose: a tranquil Lake Brienz cruise or the First Cliff Walk in Grindelwald. Candlelit birthday dinner at La Terrasse — the hotel arranges cake, flowers and room décor if you email ahead.</p></div>
+    <div class="stop"><div class="dot">7</div><div class="when">Mon 3 – Tue 4 Aug · Zurich</div><h3>Easy return</h3><p>Two hours back to Zurich. Bahnhofstrasse shopping, a last lakeside walk, airport hotel, morning flight home with very full camera rolls.</p></div>
+  </div>
+</div></section>
+
+<section id="flights"><div class="wrap">
+  <span class="eyebrow">Getting there</span>
+  <h2 class="sec-h">Flights, Delhi ⇄ Zurich</h2>
+  <p class="sec-sub">Late July is peak season — book the week the visa is filed. Pick a style; the budget updates below.</p>
+  <div class="opts" id="flightOpts"></div>
+</div></section>
+
+<section id="places"><div class="wrap">
+  <span class="eyebrow">Where you're going</span>
+  <h2 class="sec-h">The places</h2>
+  <p class="sec-sub">Six bases and peaks on this route — plus three famous extras at the end if you ever come back (or want to swap a day).</p>
+  <div class="grid" id="placesGrid"></div>
+</div></section>
+
+<section id="activities"><div class="wrap">
+  <span class="eyebrow">Pick what you love</span>
+  <h2 class="sec-h">Activities &amp; experiences</h2>
+  <p class="sec-sub">Tap <b>Add to plan</b> and the budget at the bottom updates instantly. Prices are for <b>both of you together</b>, in peak summer 2026, using whichever rail pass you've selected below in the passes section.</p>
+  <div class="filters" id="actFilters"></div>
+  <div class="grid" id="actGrid"></div>
+</div></section>
+
+<section id="passes"><div class="wrap">
+  <span class="eyebrow">The money-saver</span>
+  <h2 class="sec-h">Rail passes, decoded</h2>
+  <p class="sec-sub">Swiss trains are world-class and expensive — the pass you choose changes the price of almost everything above. Pick one here; the activity prices and budget recalculate automatically.</p>
+  <div class="opts" id="passOpts"></div>
+  <div class="strip" style="margin-top:22px">
+    <div class="s"><h4>Why we recommend the Swiss Travel Pass</h4><p>Every intercity train, bus and lake boat on this route becomes free, the Lindt museum is included, Rigi would be 100% free, and the big peaks are 25–50% off. For an 8-day, four-city trip it's the no-maths option.</p></div>
+    <div class="s"><h4>When the Half Fare Card wins</h4><p>It costs far less upfront (CHF 120 each, valid a month) and gives 50% off everything — often cheaper on paper, but you'll buy a ticket for every single ride. Better for slower trips with fewer legs.</p></div>
+    <div class="s"><h4>Jungfraujoch seat reservation</h4><p>Whatever pass you hold, the final train to the Top of Europe needs a CHF 10 seat reservation per person in summer — it's mandatory May–October and slots sell out weeks ahead. Book it the day flights are confirmed.</p></div>
+  </div>
+</div></section>
+
+<section id="trains"><div class="wrap">
+  <span class="eyebrow">Getting around</span>
+  <h2 class="sec-h">Trains are the sightseeing</h2>
+  <p class="sec-sub">No car needed — Swiss rail is punctual to the minute, luggage-friendly, and the windows are the show. The legs on your route, plus the legendary panoramic trains for a future trip:</p>
+  <div class="tbl-wrap"><table class="tbl">
+    <tr><th>Journey</th><th>Time</th><th>Window tip</th><th>On this trip?</th></tr>
+    <tr><td><b>Zurich Airport → Zurich → Lucerne</b></td><td>~1 h 15 m total</td><td>Trains every 30 min, no booking needed</td><td>Yes · Day 1–2</td></tr>
+    <tr><td><b>Lucerne → Engelberg</b> (for Titlis)</td><td>43 min</td><td>Sit left for the valley views</td><td>Yes · Day 3</td></tr>
+    <tr><td><b>Luzern–Interlaken Express</b></td><td>1 h 50 m</td><td>Right side — five lakes incl. emerald Lungernsee</td><td>Yes · Day 4</td></tr>
+    <tr><td><b>Eiger Express + Jungfrau Railway</b></td><td>~45 min up</td><td>Left side in the gondola for the Eiger north face</td><td>Yes · Day 5</td></tr>
+    <tr><td><b>Interlaken → Zurich</b></td><td>~2 h</td><td>Direct trains hourly</td><td>Yes · Day 7</td></tr>
+    <tr><td>GoldenPass Express (Interlaken → Montreux)</td><td>3 h 15 m</td><td>Vineyards, castles, Lake Geneva</td><td>Next time</td></tr>
+    <tr><td>Glacier Express (Zermatt → St Moritz)</td><td>~8 h</td><td>291 bridges, 91 tunnels — the world's slowest express</td><td>Next time</td></tr>
+    <tr><td>Bernina Express (Chur → Tirano, Italy)</td><td>~4 h</td><td>UNESCO-listed line over the Bernina pass</td><td>Next time</td></tr>
+  </table></div>
+</div></section>
+
+<section id="hotels"><div class="wrap">
+  <span class="eyebrow">Where you'll sleep</span>
+  <h2 class="sec-h">Hotels, three ways</h2>
+  <p class="sec-sub">Seven nights: 1 in Zurich, 2 in Lucerne, 3 in Interlaken, 1 at the airport. Pick a style — the birthday night at the Victoria-Jungfrau Grand Hotel &amp; Spa is sacred in all three.</p>
+  <div class="opts" id="hotelOpts"></div>
+  <div style="margin-top:26px" class="tbl-wrap"><table class="tbl">
+    <tr><th>City</th><th>Smart pick</th><th>Comfort pick (recommended)</th><th>Luxury pick</th></tr>
+    <tr><td><b>Zurich</b> · 1 night</td><td>Hotel Bristol / Walhalla</td><td>Marktgasse Hotel, old town</td><td>Baur au Lac on the lake</td></tr>
+    <tr><td><b>Lucerne</b> · 2 nights</td><td>Hotel Alpha</td><td>Hotel des Balances — riverfront balconies facing Chapel Bridge</td><td>Mandarin Oriental Palace</td></tr>
+    <tr><td><b>Interlaken</b> · 2 + 1 nights</td><td>Hotel Interlaken (3★, charming)</td><td>Boutique Hotel Bellevue, then move to VJ for the birthday</td><td>Victoria-Jungfrau all three nights</td></tr>
+    <tr><td><b>Airport</b> · 1 night</td><td>ibis / Holiday Inn Express</td><td>Radisson Blu Zurich Airport</td><td>Radisson Blu, lake-view suite</td></tr>
+  </table></div>
+  <h3 style="font-size:20px;font-weight:900;margin:34px 0 6px">And how will you eat?</h3>
+  <p class="sec-sub" style="margin-bottom:18px">Seven days of meals for two — Switzerland rewards a mix of bakery lunches and one proper restaurant a day.</p>
+  <div class="opts" id="foodOpts"></div>
+</div></section>
+
+<section id="weather"><div class="wrap">
+  <span class="eyebrow">Late July – early August</span>
+  <h2 class="sec-h">Weather &amp; what to pack</h2>
+  <div class="strip">
+    <div class="s"><h4>In the valleys (Zurich, Lucerne, Interlaken)</h4><p>Warm and pleasant: typically 18–28°C, long daylight until ~9:15 pm. Occasional afternoon thunderstorms — a compact umbrella earns its place.</p></div>
+    <div class="s"><h4>On the peaks (Titlis, Jungfraujoch)</h4><p>A different planet: −2 to 8°C with snow underfoot even in August. Real layers needed — warm jacket, closed shoes with grip, sunglasses (glacier glare is fierce), sunscreen.</p></div>
+    <div class="s"><h4>Pack list for Mum &amp; Papa</h4><ul><li>Light layers + one warm jacket each</li><li>Comfortable walking shoes, broken in</li><li>Sunglasses, SPF 50, lip balm</li><li>Umbrella, power adapter (Type J), meds</li><li>Something nice for the birthday dinner</li></ul></div>
+    <div class="s"><h4>Altitude note at 3,454 m</h4><p>Mild breathlessness or a light headache is normal at the Jungfraujoch. Walk slowly, drink water, skip alcohol beforehand — symptoms fade on the way down. Anyone with heart or BP concerns should check with their doctor first.</p></div>
+  </div>
+</div></section>
+
+<section id="essentials"><div class="wrap">
+  <span class="eyebrow">Before you fly</span>
+  <h2 class="sec-h">Essentials &amp; booking order</h2>
+  <div class="strip">
+    <div class="s"><h4>1 · Schengen visa — do this first</h4><p>Apply via VFS Global for Switzerland immediately: appointment plus ~15 working days of processing. Needs confirmed flights, hotel bookings (refundable is fine), travel insurance of €30,000 cover, and bank statements.</p></div>
+    <div class="s"><h4>2 · Flights</h4><p>Delhi ⇄ Zurich. Direct on SWISS or Air India is ~8 h 45 m; one-stops via the Gulf are cheaper. Book the night departure on 27 July so you land fresh on the morning of the 28th.</p></div>
+    <div class="s"><h4>3 · The three sell-outs</h4><p>Jungfraujoch seat reservation, Lindt Home of Chocolate timed entry, and the Victoria-Jungfrau birthday night. Book all three the same week as flights.</p></div>
+    <div class="s"><h4>4 · Money &amp; phone</h4><p>Cards work everywhere — carry only ~CHF 100 cash. Get a Europe eSIM (Airalo/Holafly) before flying. Swiss Travel Pass is a QR on the phone; keep a printout for Papa's pocket too.</p></div>
+    <div class="s"><h4>5 · The birthday email</h4><p>Write to the Victoria-Jungfrau concierge two weeks ahead: it's a 50th, you'd love cake at dinner, flowers in the room, and a Jungfrau-view table at La Terrasse. Swiss grand hotels live for this.</p></div>
+    <div class="s"><h4>6 · Useful official sites</h4><p><a href="https://www.sbb.ch/en" target="_blank" rel="noopener">SBB.ch</a> (all trains) · <a href="https://www.jungfrau.ch/en-gb/" target="_blank" rel="noopener">jungfrau.ch</a> · <a href="https://www.titlis.ch/en" target="_blank" rel="noopener">titlis.ch</a> · <a href="https://www.lindt-home-of-chocolate.ch" target="_blank" rel="noopener">Lindt</a> · <a href="https://www.myswitzerland.com" target="_blank" rel="noopener">MySwitzerland.com</a> · <a href="https://www.meteoswiss.admin.ch" target="_blank" rel="noopener">MeteoSwiss</a></p></div>
+  </div>
+</div></section>
+
+<footer>Built with love for Mum &amp; Papa's Switzerland, 28 July – 4 August 2026 · Prices are careful 2026 estimates for two people — always confirm on official sites before paying.</footer>
+
+<!-- ============ budget bar + drawer ============ -->
+<div id="bar"><div class="bar-in">
+  <div class="bar-top">
+    <div class="bar-total"><span id="barTot">₹0</span><small id="barChf"></small></div>
+    <div class="bar-stat" id="barStat"></div>
+    <button id="openDrawer" onclick="toggleDrawer()">View plan</button>
+  </div>
+  <div class="track"><div class="fill" id="fill"></div><div class="train" id="train" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="12" rx="3" fill="#fff"/><rect x="4" y="5" width="16" height="5" rx="2.5" fill="#DA291C"/><circle cx="9" cy="19" r="2" fill="#fff"/><circle cx="15" cy="19" r="2" fill="#fff"/><rect x="7" y="11" width="4" height="4" rx="1" fill="#27506B"/><rect x="13" y="11" width="4" height="4" rx="1" fill="#27506B"/></svg>
+  </div></div>
+</div></div>
+
+<div id="drawer" role="dialog" aria-label="Your trip plan and budget breakdown"><div class="dr-in">
+  <h3 style="font-size:22px;font-weight:900;margin-bottom:4px">Your plan</h3>
+  <p style="font-size:13.5px;color:var(--ink2);margin-bottom:14px">For two people · against ₹6,00,000 · ≈ ₹105 per CHF</p>
+  <div id="drRows"></div>
+  <div class="dr-tot"><span>Total</span><span id="drTot"></span></div>
+  <div style="font-size:13px;color:var(--ink2)" id="drDiff"></div>
+  <div class="dr-actions">
+    <button class="btn wa" onclick="shareWA()">Send to WhatsApp</button>
+    <button class="btn" onclick="resetPlan()">Reset</button>
+    <button class="btn red" onclick="toggleDrawer()">Close</button>
+  </div>
+</div></div>
+
+<script>
+const R=105, BUDGET=600000, inr=n=>"₹"+Math.round(n).toLocaleString("en-IN");
+const MTN='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect width="400" height="200" fill="#DCE9F2"/><circle cx="330" cy="48" r="22" fill="#F7EFDC"/><path d="M0 200 L120 70 L180 140 L240 55 L400 200 Z" fill="#27506B"/><path d="M95 97 L120 70 L145 97 L120 88 Z" fill="#FAFAF8"/><path d="M215 90 L240 55 L268 95 L240 80 Z" fill="#FAFAF8"/><path d="M0 200 L80 130 L200 200 Z" fill="#2F5D50"/></svg>');
+const IMG={
+ lindt:"https://lh3.googleusercontent.com/place-photos/AJRVUZNGCLb81QR1rcsaFKhZORlXp2rO5NboQ7c6acc-qaYE9H-o-5tJzoYL2SMX1VmP8NHNFUxmh7MVaybF5SvjKSQeUDsCZfSI63ymT_BgS47b0ZGuVt_AMxIJ_m9rgG21v7Rsw6_Xvb-yCtT3pQ=s4800-w800-h600",
+ chapel:"https://lh3.googleusercontent.com/place-photos/AJRVUZNdZFP2D8ucna4woL5uLYt58pltwNHd7g7rJXVUEpd03M0UEeEhCvn1D7mxPH_Qk6D03qa7B_JtBWX8mqMz5Omrv0sTuAdrzcSQhe_GjMFFEXib7M1y5x83Y-Z6khy1DQ_2Zxalfr14ZX0jFw=s4800-w800-h600",
+ balances:"https://lh3.googleusercontent.com/place-photos/AJRVUZOGWdh3M2uBNi7Ws74_YUYEhOipoU4shK8lnPFjRRGoQBi8ern_zDyBe8yu6dodJ8tySUXpj6LEi2B45wDlE6SE3YTIOGlBEyPW88lobb5QtaT07Ceji8xA_l9jOsD1QU0fS0UxWBr4Kwzr98Y=s4800-w800-h539",
+ titlis:"https://lh3.googleusercontent.com/place-photos/AJRVUZOaHQZOJDX0BvhOhy-XEKUct2B3bT0fPBjm3Nu8_uq7d8PboHC8xeCczbJRMu6E4cK2wWmdQszKpxXtPhpjUv0h6wDK05C3g0UoTwt_7lQCaqrFsRxiOFlhOsjx0Bzp2YCEILmV_5mAlJhJzA=s4800-w800-h600",
+ boat:"https://lh3.googleusercontent.com/place-photos/AJRVUZPgGmRUs3phejg4G5l6-WHM3oF8UQfP2wivshnJkNWHFiUYn2k2RR9jhDJazbhfQj-_hf1Z9GM3MMNn8298t5gz1MBo2t5F5cu04f361KekzUwEVDB-BPtTRNXlvfbNwzFfo28U7_I2Ynhd7CooYqxb=s4800-w800-h600",
+ harder:"https://lh3.googleusercontent.com/place-photos/AJRVUZNSpekT4WAwPFz5LcFxCKxBJIBWWlyHrBq4YUsfX8Go6nU68vunPwftj0HWqmTN33d0JI_tJL8tqgDmalDk04estCh9sxJbkSf9mm-CFIjsMBWZWlrhwkxRaVChB15lJUNCzxPfYOVQs7UKrw=s4800-w800-h600",
+ vj:"https://lh3.googleusercontent.com/place-photos/AJRVUZPM17P0S-0j2FRdoFoJTd-4P590csnr8YklQnEouLaksUV46McpWiZUeKjUgNZhPOfxDIfJjcvSHx7wTPxJyFovZ9LrFLSP9PKeQQ6sqwxZTSQrD-JmQfrnWpGa4NNnDh-eZgsVAK8BwboA0w=s4800-w800-h600",
+ jung:"https://lh3.googleusercontent.com/place-photos/AJRVUZPQIDg5Lh_N19gGwREq4I34f5TI5syHG26MkZzBQEJlM5bQaTtQlbaCC5sVd02edZuUJn477n5AReMoBVqVBZJrmFC6MfXNoVhpT3uT98fP3ZpeHqMlsyXRlhJTVvgmLmvZCD-5ZeZA0x445A=s4800-w800-h600",
+ cliff:"https://lh3.googleusercontent.com/place-photos/AJRVUZNFNi1M7RCqXTCj7edLiXEv9O6wP31O1CHwSEVhufSnRlBujjNGAakUWjlHUWnqPjxTCho6kQk4_7GQEdjfWTidls8SMg8YKC7H6LkqzQGJI4oSC3qeNg7UifDvHWt8Mov3FrsLQ77m95g3Kd2fvF9c6A=s4800-w800-h600"};
+const img=(k,alt)=>`<img class="photo" loading="lazy" alt="${alt}" src="${IMG[k]||MTN}" onerror="this.src='${MTN}'">`;
+
+/* ---------- places ---------- */
+const PLACES=[
+ {n:"Zurich",d:"Switzerland's polished gateway — lakeside promenades, the medieval old town, Bahnhofstrasse shopping and the Lindt chocolate world next door.",t:"Days 1 & 7",img:"lindt",alt:"The chocolate fountain at the Lindt Home of Chocolate"},
+ {n:"Lucerne",d:"The country's prettiest city: a wooden 14th-century bridge, painted facades, and a lake ringed by mountains. Your two-night base for Titlis.",t:"Days 2–3",img:"chapel",alt:"Chapel Bridge across the Reuss river in Lucerne"},
+ {n:"Engelberg & Mt Titlis",d:"A monastery village under a 3,020 m glacier peak. The rotating cable car, ice cave and Europe's highest suspension bridge — snow guaranteed.",t:"Day 3",img:"titlis",alt:"Snowy summit of Mount Titlis"},
+ {n:"Interlaken",d:"Between two glassy lakes with the Jungfrau filling the horizon. Spas, cruises, paragliders overhead — your home for the birthday.",t:"Days 4–6",img:"vj",alt:"Victoria-Jungfrau Grand Hotel and Spa in Interlaken"},
+ {n:"Grindelwald & First",d:"A storybook village beneath the Eiger's north face, with the cliff-edge walkway, gondola rides and gentle ridge views above.",t:"Day 6 option",img:"cliff",alt:"The First Cliff Walk above Grindelwald"},
+ {n:"Jungfraujoch",d:"Europe's highest railway station at 3,454 m — the Sphinx terrace, the Ice Palace, and the great Aletsch glacier rolling away below.",t:"Day 5",img:"jung",alt:"View from the Jungfraujoch Top of Europe"},
+ {n:"Mt Pilatus / Mt Rigi",d:"Lucerne's other two giants. Rigi is fully free with the Travel Pass (train + boat combo); Pilatus has the world's steepest cogwheel railway.",t:"Next visit",img:null,alt:"Alpine peaks"},
+ {n:"Lauterbrunnen",d:"A valley of 72 waterfalls and cliff-hung villages — an easy half-day from Interlaken if you find spare hours.",t:"Bonus",img:null,alt:"Alpine valley"},
+ {n:"Zermatt & the Matterhorn",d:"The car-free village under the world's most famous peak, with the Gornergrat railway and Glacier Express. Saved for trip #2.",t:"Next visit",img:null,alt:"Alpine peaks"}];
+document.getElementById("placesGrid").innerHTML=PLACES.map(p=>`<div class="card">${img(p.img,p.alt)}<div class="body"><div class="meta"><span class="chip">${p.t}</span></div><h3>${p.n}</h3><p>${p.d}</p></div></div>`).join("");
+
+/* ---------- activities: prices per person CHF {full, stp, hfc}; flat = INR for two ---------- */
+const ACTS=[
+ {id:"jung",place:"Jungfrau region",n:"Jungfraujoch — Top of Europe",d:"Gondola + cogwheel to 3,454 m. Ice Palace, Sphinx terrace, Aletsch glacier. Add CHF 10 pp seat reservation.",img:"jung",alt:"Jungfraujoch terrace",must:1,chf:{full:261,stp:187,hfc:141}},
+ {id:"titlis",place:"Lucerne region",n:"Mt Titlis + rotating Rotair",d:"Glacier cave, Cliff Walk suspension bridge, summer snow park. From Engelberg.",img:"titlis",alt:"Mount Titlis cable car",must:1,chf:{full:102,stp:51,hfc:51}},
+ {id:"lindt",place:"Zurich",n:"Lindt Home of Chocolate",d:"The 9 m chocolate fountain, immersive museum and very generous tasting room. Timed entry — book ahead.",img:"lindt",alt:"Lindt chocolate fountain",must:1,chf:{full:17,stp:0,hfc:17}},
+ {id:"cruise",place:"Lucerne region",n:"Lake Lucerne panoramic cruise",d:"One golden hour on the water with Pilatus and Rigi all around. Coffee on the top deck.",img:"boat",alt:"Lake Lucerne paddle steamer",chf:{full:31,stp:0,hfc:16}},
+ {id:"harder",place:"Interlaken",n:"Harder Kulm sunset funicular",d:"Interlaken's own viewpoint — the two lakes and the Jungfrau trio at golden hour, dinner on the platform.",img:"harder",alt:"Harder Kulm viewing platform",chf:{full:44,stp:22,hfc:22}},
+ {id:"brienz",place:"Interlaken",n:"Lake Brienz cruise",d:"The turquoise one. Slow boat past Giessbach falls — the most relaxing two hours in Switzerland.",img:"boat",alt:"Boat on a turquoise lake",chf:{full:32,stp:0,hfc:16}},
+ {id:"cliffwalk",place:"Jungfrau region",n:"Grindelwald First + Cliff Walk",d:"Gondola over meadows, then the famous walkway bolted to the cliff. The walk itself is free.",img:"cliff",alt:"First Cliff Walk",chf:{full:76,stp:38,hfc:38}},
+ {id:"dinner",place:"Interlaken",n:"Birthday dinner at La Terrasse",d:"Candlelight under the chandeliers at the Victoria-Jungfrau, cake arranged with the concierge.",img:"vj",alt:"Victoria-Jungfrau hotel",bday:1,flat:23100},
+ {id:"spa",place:"Interlaken",n:"Couples spa morning",d:"Spa Nescens at the Victoria-Jungfrau: pools, saunas and a treatment each. The birthday-morning move.",img:"vj",alt:"Grand hotel spa",bday:1,flat:31500},
+ {id:"fondue",place:"Lucerne region",n:"Cheese fondue night",d:"The classic bubbling pot in a wood-panelled old-town restaurant. One of the great Swiss rituals.",img:"chapel",alt:"Lucerne old town",flat:8400},
+ {id:"rigi",place:"Lucerne region",n:"Mt Rigi boat + cogwheel loop",d:"Queen of the Mountains: steamer to Vitznau, Europe's oldest mountain railway up, train back. Free with the Travel Pass.",img:null,alt:"Mount Rigi",chf:{full:109,stp:0,hfc:55}},
+ {id:"para",place:"Interlaken",n:"Tandem paragliding",d:"If Papa's feeling 25 instead of 50 — a calm tandem float over the lakes with a pro pilot.",img:null,alt:"Paragliding over Interlaken",flat:39900},
+ {id:"stbeatus",place:"Interlaken",n:"St. Beatus caves",d:"Waterfall-fed caverns above Lake Thun — a cool, gentle afternoon if the weather turns.",img:null,alt:"Cave entrance above a lake",flat:9450}];
+
+/* ---------- choices ---------- */
+const FLIGHTS=[
+ {id:"f1",n:"One-stop via the Gulf",d:"Etihad / Emirates / Air France · ~12–14 h door to door",p:130000},
+ {id:"f2",n:"Direct, 8 h 45 m",d:"SWISS or Air India non-stop · land fresh (recommended at 50!)",p:170000,tag:"Worth it"}];
+const HOTELS=[
+ {id:"h1",n:"Smart",d:"Clean, central 3–4★ + the Victoria-Jungfrau birthday night",p:168000},
+ {id:"h2",n:"Comfort",d:"4★ with views (des Balances, Bellevue) + VJ birthday night",p:211000,tag:"Recommended"},
+ {id:"h3",n:"Full luxury",d:"5★ palace hotels all seven nights",p:399000}];
+const PASSES=[
+ {id:"stp",n:"Swiss Travel Pass · 8 days",d:"All trains, buses & boats free · Lindt & 500 museums free · 25–50% off peaks · zero ticket queues",p:94300,tag:"Recommended"},
+ {id:"hfc",n:"Half Fare Card",d:"CHF 120 each, 50% off everything — cheaper upfront, but you buy every ticket (≈ ₹19,000 of route trains added below)",p:25200}];
+const FOOD=[
+ {id:"d1",n:"Everyday",d:"Bakery & Coop lunches, casual dinners",p:58800},
+ {id:"d2",n:"Mixed",d:"A nice restaurant most evenings",p:80850},
+ {id:"d3",n:"Treat yourselves",d:"Fine dining several nights",p:117600}];
+const MISC=28000, HFC_TRAINS=18900;
+
+/* ---------- state ---------- */
+const S={flight:"f1",hotel:"h2",pass:"stp",food:"d1",acts:new Set(["jung","titlis","lindt","cruise","harder","dinner"])};
+
+/* ---------- renderers ---------- */
+const actPrice=a=>a.flat!=null?a.flat:Math.round(a.chf[S.pass==="stp"?"stp":"hfc"]*2*R);
+const fullPrice=a=>a.flat!=null?null:Math.round(a.chf.full*2*R);
+let actFilter="All";
+function renderActs(){
+  const places=["All",...new Set(ACTS.map(a=>a.place))];
+  document.getElementById("actFilters").innerHTML=places.map(p=>`<button class="fbtn ${p===actFilter?"on":""}" onclick="actFilter='${p}';renderActs()">${p}</button>`).join("");
+  document.getElementById("actGrid").innerHTML=ACTS.filter(a=>actFilter==="All"||a.place===actFilter).map(a=>{
+    const on=S.acts.has(a.id),p=actPrice(a),f=fullPrice(a);
+    return `<div class="card">${img(a.img,a.alt)}<div class="body">
+      <div class="meta"><span class="chip">${a.place}</span>${a.must?'<span class="chip must">Must-do</span>':""}${a.bday?'<span class="chip gold">Birthday</span>':""}${p===0?'<span class="chip free">Free with pass</span>':""}</div>
+      <h3>${a.n}</h3><p>${a.d}</p>
+      <div class="price-row"><div class="price">${p===0?"₹0":inr(p)}<small>for two${f&&f>p?" · was "+inr(f):""}</small></div>
+      <button class="btn sm ${on?"on":""}" onclick="toggleAct('${a.id}')">${on?"✓ In plan":"Add to plan"}</button></div>
+    </div></div>`;}).join("");
+}
+function renderOpts(elId,list,key){
+  document.getElementById(elId).innerHTML=list.map(o=>`<div class="opt ${S[key]===o.id?"on":""}" onclick="S['${key}']='${o.id}';renderAll()" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){S['${key}']='${o.id}';renderAll()}">
+    ${o.tag?`<span class="tag">${o.tag}</span>`:""}<h4>${o.n}</h4><p>${o.d}</p><div class="p">${inr(o.p)}</div></div>`).join("");
+}
+function toggleAct(id){S.acts.has(id)?S.acts.delete(id):S.acts.add(id);renderActs();calc();}
+
+/* ---------- budget ---------- */
+function pick(list,id){return list.find(o=>o.id===id)}
+function lines(){
+  const L=[["Flights for two",pick(FLIGHTS,S.flight).p],["Hotels · 7 nights",pick(HOTELS,S.hotel).p],[pick(PASSES,S.pass).n,pick(PASSES,S.pass).p]];
+  if(S.pass==="hfc")L.push(["Route trains at half fare",HFC_TRAINS]);
+  ACTS.filter(a=>S.acts.has(a.id)).forEach(a=>L.push([a.n,actPrice(a)]));
+  L.push(["Food · "+pick(FOOD,S.food).n.toLowerCase(),pick(FOOD,S.food).p],["Visa, insurance, eSIM",MISC]);
+  return L;
+}
+function calc(){
+  const L=lines(),tot=L.reduce((s,x)=>s+x[1],0),diff=BUDGET-tot,pct=Math.min(100,tot/BUDGET*100);
+  document.getElementById("barTot").textContent=inr(tot);
+  document.getElementById("barChf").textContent="≈ CHF "+Math.round(tot/R).toLocaleString()+" · for two";
+  const st=document.getElementById("barStat");
+  st.textContent=diff>=0?inr(diff)+" left in budget":inr(-diff)+" over budget";
+  st.className="bar-stat "+(diff>=0?"ok":"over");
+  document.getElementById("fill").style.width=pct+"%";
+  document.getElementById("fill").style.background=diff>=0?"var(--red)":"#FF6B5E";
+  document.getElementById("train").style.left=pct+"%";
+  document.getElementById("drRows").innerHTML=L.map(x=>`<div class="dr-row"><span>${x[0]}</span><b>${inr(x[1])}</b></div>`).join("");
+  document.getElementById("drTot").textContent=inr(tot);
+  document.getElementById("drDiff").textContent=diff>=0?"Under the ₹6,00,000 budget by "+inr(diff)+". Wiggle room for shopping and chocolate.":"Over budget by "+inr(-diff)+" — try the one-stop flight, the Smart hotel tier, or trimming an activity.";
+}
+function renderAll(){renderOpts("passOpts",PASSES,"pass");renderOpts("hotelOpts",HOTELS,"hotel");renderOpts("flightOpts",FLIGHTS,"flight");renderOpts("foodOpts",FOOD,"food");renderActs();calc();}
+function toggleDrawer(){document.getElementById("drawer").classList.toggle("open")}
+function resetPlan(){S.flight="f1";S.hotel="h2";S.pass="stp";S.food="d1";S.acts=new Set(["jung","titlis","lindt","cruise","harder","dinner"]);renderAll();}
+function shareWA(){
+  const L=lines(),tot=L.reduce((s,x)=>s+x[1],0);
+  const txt="Our Switzerland plan (28 Jul – 4 Aug) 🇨🇭\n"+L.map(x=>"• "+x[0]+" — "+inr(x[1])).join("\n")+"\nTotal: "+inr(tot)+" of ₹6,00,000";
+  window.open("https://wa.me/?text="+encodeURIComponent(txt),"_blank");
+}
+renderAll();
+</script>
+</body>
+</html>
